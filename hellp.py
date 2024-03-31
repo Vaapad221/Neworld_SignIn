@@ -60,7 +60,7 @@ driver.refresh()#刷新页面
 
 driver.refresh()#刷新页面 
 
-time.sleep(5)
+# time.sleep(5)
 
 # buttons = driver.find_element_by_xpath("//button[@id='checkin']")
 # print('buttons',buttons)
