@@ -13,7 +13,29 @@ chrome_options.add_argument('--window-size=1420,1080')
 chrome_options.add_argument('--headless')
 chrome_options.add_argument('--disable-gpu')
 # action  linux服务器驱动地址
-driver = webdriver.Chrome(executable_path='/home/runner/work/Neworld_SignIn/Neworld_SignIn/driver/chromedriver',chrome_options=chrome_options)    # Chrome浏览器  
+from selenium import webdriver  
+from selenium.webdriver.chrome.service import Service  
+  
+# 创建 Service 对象，并指定 chromedriver 的路径  
+s = Service('/home/runner/work/Neworld_SignIn/Neworld_SignIn/driver/chromedriver')  
+  
+# 初始化 webdriver.Chrome，使用之前创建的 Service 对象  
+driver = webdriver.Chrome(service=s)  
+  
+# 如果之前有设置 chrome_options，应该将其转换为 Options 对象，然后传递给 webdriver.Chrome  
+from selenium.webdriver.chrome.options import Options  
+chrome_options = Options()  
+# 这里添加你的 chrome_options 配置  
+# chrome_options.add_argument(...)  
+  
+# 使用 Options 对象初始化 webdriver.Chrome  
+driver = webdriver.Chrome(service=s, options=chrome_options)  
+  
+# 现在你可以使用 driver 对象了  
+# ...  
+  
+# 结束时记得关闭浏览器  
+
 # driver = webdriver.Chrome(executable_path='/home/runner/work/Neworld_SignIn/Neworld_SignIn/driver/chromedriver')    # Chrome浏览器  
 
 # windows 系统驱动路径
