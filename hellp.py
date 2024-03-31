@@ -60,14 +60,9 @@ driver.refresh()#刷新页面
 
 driver.refresh()#刷新页面 
 
-# time.sleep(5)
+time.sleep(5)
 
 # buttons = driver.find_element_by_xpath("//button[@id='checkin']")
 # print('buttons',buttons)
 
-try:  
-    element = WebDriverWait(driver, 10).until(  
-        EC.element_to_be_clickable(By.ID, 'check-in'))  
-    element.click()  # 点击元素  
-except selenium.common.exceptions.TimeoutException:  
-    print("超时：无法找到元素")  
+driver.find_element(By.ID, 'check-in').click() # 点击元素
