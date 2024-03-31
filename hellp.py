@@ -62,4 +62,4 @@ driver.refresh()#刷新页面
 # buttons = driver.find_element_by_xpath("//button[@id='checkin']")
 # print('buttons',buttons)
 
-driver.find_element(By.ID, 'check-in').click() # 点击元素
+driver.find_element(By.ID, 'checkin').click() # 点击元素
